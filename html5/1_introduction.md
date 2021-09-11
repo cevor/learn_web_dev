@@ -1,4 +1,4 @@
-# Introduction to HTML 5 
+# Introduction to HTML 5
 
 ## Create an HTML5 page
 
@@ -12,11 +12,13 @@
     </html>
 
 ## Character encoding
+
 In your document head , add a meta declaration for the character set
 
     <meta charset="UTF-8" />
 
 ## Specify the primary language of your web page
+
 Add the lang attribute and appropriate value to your opening html element
 
     <html lang="en">
@@ -29,24 +31,31 @@ Add the lang attribute and appropriate value to your opening html element
 ## Document Structure
 
 ### header
+
 Is used to contain the headline(s) for a page and/or section . It can also contain supplemental information such as logos and navigational aids.
 
 ### footer
+
 Contains information about a page and/or section , such as who wrote it, links to related information, and copyright statements.
 
 ### nav
+
 Contains the major navigation links for a page and, while not a requirement, is often contained by header.
 
 ### aside
+
 Contains information that is related to the surrounding content but also exists independently, such as a sidebar or pull-quotes.
 
 ### section
+
 Is the most generic of the new structural elements, containing content that can be grouped thematically or is related.
 
 ### article
+
 Is used for self-contained content that could be consumed independently of the page as a whole, such as a blog entry.
 
 ### Tips
+
 - Do not use section simply as a styling hook. Use div s and span s instead.
 - Do not use section if header , footer , aside , or article is more semantically appropriate for your content.
 - Do not use section unless the content has a natural heading.
@@ -54,6 +63,7 @@ Is used for self-contained content that could be consumed independently of the p
 - h1 as the primary heading of article
 
 ## hgroup
+
 hgroup hides all headings except the highest ranked from the document outline.
 
     <hgroup>
@@ -66,34 +76,40 @@ output will be:
 `HTML5, for Fun & Profit`
 
 ## Emphasizing Text
+
     <p>My name is <em>Jane</em>, not John.</p>
 
 Tip
+
 - Browsers render both the `<i>` and `<em>` elements in italics
 
 ## Importance Tex
+
 Browsers render both the `<b>` and `<strong>` elements in bold
 
 ## Reference Text
+
     <p>Your search for <mark>awesomesauce</mark> resulted in 923 entries:</p>
 
 Browsers render the `<mark>` element with a yellow background by default
 
 ## Small Print
+
     <p><small>Copyright &copy; 2011 Awesomest Blog. All rights reserved.</small></p>
 
 ## Acronyms and Abbreviations
 
     <abbr title="Accessible Rich Internet Applications">ARIA</abbr>
 
-
 ## Adding Links to Block-Level Content
+
     <a href="http://html5funprofit.com">
       <h1>HTML5, for Fun &amp; Profit</h1>
       <img src="logo.png" alt="HTML5 for Fun and Profit" />
     </a>
 
 ## Figures and Captions
+
     <figure>
       <img src="chart.png" alt="Chart of increasing awesomeness" />
       <figcaption>
@@ -111,12 +127,12 @@ figcaption is optional and can reside anywhere within figure , whether before or
     <p>The class starts at <time datetime="08:00">8:00 am</time>.</p>
 
 ## Publication dates
+
     <p>Published: <time datetime="2011-01-09" pubdate>January 9, 2011</time></p>
 
 ## Details element
 
 Contain the full content with the details element and indicate the content area that is “focusable” with summary
-
 
     <details>
       <summary>Upcoming Topics</summary>
@@ -127,7 +143,6 @@ Contain the full content with the details element and indicate the content area 
         <li>Machine Semantics with Microdata</li>
       </ul>
     </details>
-
 
 ## Numbering of Your Lists
 
@@ -176,4 +191,3 @@ draggable simply allows you to specify the elements that
 can be dragged.
 
 To achieve the desired drag-and-drop functionality, you need JavaScript.
-
