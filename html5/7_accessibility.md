@@ -202,3 +202,96 @@ Next, add a “skip navigation” link:
 Avoid using display:none for hiding skip links as screen readers might ignore the links altogether.
 
 Instead of hiding the skip link, consider using CSS to stylize the link to match your design. Or, better yet, have your skip link become visible with keyboard focus.
+
+## Form Fields with Their Labels
+
+Use the label element to programmatically associate text with its form field.
+
+The value  of the label’s for attribute must match the value of the form field’s id attribute.
+
+This id value must be unique on each page.
+
+    <label for="fName">First Name</label>
+    <input type="text" id="fname">
+
+Do not include label elements for form fields of the type hidden.
+
+## Multiple labels
+
+Add the ARIA labeledby or describedby attributes if the form field needs multiple labels or descriptions for it to make sense.
+
+Both of these attributes can accept references to multiple values. Add a space between each value.
+
+### Tips
+
+The label element provides a caption for the associated form field.
+
+The label element is best for simple forms, while ARIA is better suited to form fields that need multiple labels or whenever the label element isn’t an option.
+
+## Grouping Form Fields Logically
+
+Add the fieldset element around each group of related form fields, and add a legend as the first element within the fieldset.
+
+The legend represents a caption or title for the group of fields.
+
+    <form>
+        <fieldset>
+            <legend>Movie Rating</legend>
+            <p><input type="radio" name="rating" id="rating1"><label for="rating1">Excellent</label></p>
+            <p><input type="radio" name="rating" id="rating2"><label for="rating2">Good</label></p>
+            <p><input type="radio" name="rating" id="rating3"><label for="rating3">Fair</label></p>
+            <p><input type="radio" name="rating" id="rating4"><label for="rating4">Poor</label></p>
+        </fieldset>
+    </form>
+
+## Required Form Fields
+
+If you need to accommodate internationalization (IL8N) or users with low vision, place the label on a separate line.
+
+Include (Required) within each label element for required fields.
+
+    <p><label for="fName">First Name (Required)</label></p>
+    <p><input type="text" id="fname"></p>
+
+Using ARIA
+
+    <label for="fName">
+        <img src="required-icon.jpg" role="presentation" alt="Required">First Name
+    </label>
+    <input type="text" id="fname" aria-required="true">
+
+## Dynamic Content Updating
+
+First, assign the aria-live attribute to the HTML element where a content change or update may occur and decide on the urgency of communicating the update.
+
+Then, select a standard live region role. Assign the role to the parent HTML element that contains the content that may change.
+
+If the default behaviors for the role are appropriate, you won’t need to specify attributes.
+
+    <div role="alert">
+
+### The standard live region roles include
+
+alert
+
+- Use this for a single, time-sensitive notification. It will be handled as an assertive live region and the update will appear immediately. An alert cannot receive focus, and therefore cannot be closed by the user.
+
+alertdialog
+
+- This type of alert message can receive focus. When the alert appears, you must automatically set focus on an active element in the alert dialog, such as an “OK” button. Include the aria-describedby attribute on that active element to point to the message in the dialog.
+
+log
+
+- Use this for things like message history or error logs: new information is added to the end of the log, and the oldest information may disappear.
+
+marquee
+
+- Use this for things like stock tickers or ad banners. This is similar to a log because the information presented may change frequently.
+
+status
+
+- Use this for a minor notification that does not warrant use of an alert. It will be handled as an assertive live region. A status should not receive focus. If a different part of the page drives the status changes, use the aria-controls attribute to identify the relationship.
+
+timer
+
+- Use this to display time elapsed or remaining. Update the timer at fixed intervals, unless the timer is paused or has reached the end of its count.
